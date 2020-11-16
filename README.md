@@ -16,12 +16,13 @@
 ### ターゲットユーザ
 - 就職・転職活動でTOEICのスコアアップをしたい方
 - 英語を楽しく学びたい方
+- 学んだ英語をアウトプットしたい方
 - 英語を学びたいけど何から始めたらいいかわからない方
 - 英単語を中々覚えられない方
 - お笑いが好きな方
 
 ### 主な利用シーン
-TOEICの単語勉強をしたい時
+TOEICの単語勉強をしたい時に楽しく学べます。
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1jVDuj-1J_LuR5io2L5wGyUlvqBnBx1fTU_NE6NpJXuo/edit?usp=sharing
