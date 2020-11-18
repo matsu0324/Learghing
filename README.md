@@ -1,24 +1,41 @@
-# README
+# Learghing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+「学ぶこと」という意味の"Learning"と「笑うこと」という意味の"Laughing"を掛け合わせた造語"Learghing(読み：ラーフィング)"
 
-Things you may want to cover:
+ユーザーが撮影した画像と英単語を用いて、その画像に沿った面白い英文を考えて投稿する、笑いながら英単語を学べるSNSサイトです。
 
-* Ruby version
+面白ければ面白いほど記憶に残りやすいので、見て笑うだけで単語を覚えられるだけでなく、自分が投稿する過程で英文を作成する為、単語のアウトプットとライティングの練習にも最適です。
 
-* System dependencies
+### サイトテーマ
+笑って学ぼう
 
-* Configuration
+### テーマを選んだ理由
+昨今、日本では英語教育の改革が行われているとはいえ、2019年度にスイスの国際語学教育機関が、非英語圏に対して行った調査によると、日本の順位は100ヶ国中53位であり、「低い能力レベル」に認定されており、日本人が英語に対して苦手意識があることが顕著に表れています。
 
-* Database creation
+英語が苦手な日本人が「英語を学ぶことは難しいこと」と思わぬよう、お笑いをやる・観る感覚で笑いながら英語を学び、「英語を学ぶことは楽しいこと」と思える人が一人でも多く増えて欲しいという願いからこのテーマを選びました。
 
-* Database initialization
+### ターゲットユーザ
+- 英語を楽しく学びたい方
+- 学んだ英語をアウトプットしたい方
+- 英語を学びたいけど何から始めたらいいかわからない方
+- 英単語を中々覚えられない方
+- 就職・転職活動でTOEICのスコアアップをしたい方
+- お笑いが好きな方
 
-* How to run the test suite
+### 主な利用シーン
+英単語勉強をしたい時に楽しく学べます。
 
-* Services (job queues, cache servers, search engines, etc.)
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1jVDuj-1J_LuR5io2L5wGyUlvqBnBx1fTU_NE6NpJXuo/edit?usp=sharing
 
-* Deployment instructions
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- 仮想環境：Vagrant,VirtualBox
 
-* ...
+## 使用素材
+- https://www.irasutoya.com/
+- https://o-dan.net/ja/
