@@ -1,2 +1,24 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container">
+  <div class="row">
+	  <div class="col-xs-10">
+	      <% @posts.each do |book| %>
+	        <div class="container">
+  				  <div class="user_info">
+  				    <%= link_to user_path(post.user) do %>
+    					   <%= attachment_image_tag post.user, :profile_image, :fill, 50, 50, fallback: "no-image-mini.jpg" %>
+    					<% end %>
+    					<%= post.name %>
+  				  </div>
+    				<div class="sentence-image">
+    				  <link_to post_path(post) do %>
+  				      <%= attachment_image_tag :image, :fill, 50, 50 %>
+  				    <% end %>
+  			  	</div>
+				    <div class="sentence"><%= post.sentence %></div>
+				    <div class="favorite-btn"><%#= render "favorites/favorite-btn", post: post %></div>
+				    <div class="comments-count">コメント数: <%#= post.comments.count %></div>
+				  </div>
+				<% end %>
+    </div>
+	</div>
+</div>
