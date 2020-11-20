@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_051104) do
+ActiveRecord::Schema.define(version: 2020_11_20_050845) do
+
+  create_table "post_comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text "sentence", null: false
@@ -32,8 +40,8 @@ ActiveRecord::Schema.define(version: 2020_11_19_051104) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ProfileImage"
-    t.string "image"
     t.text "profile"
+    t.string "image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
