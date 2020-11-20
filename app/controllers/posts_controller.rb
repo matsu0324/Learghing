@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = current_user
     @posts = @user.posts
-    # @book_comment = BookComment.new
+    @post_comment = PostComment.new
   end
 
   def new
