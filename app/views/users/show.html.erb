@@ -1,2 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="profile-image">
+        <%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no-image.jpg" %>
+      </div>
+      <div class="profile-name">
+        <%= @user.name %>
+      </div>
+      <!--フォロー機能追加予定-->
+
+      <p class="profile">Profile</p>
+      <p class="profile-intro"><%= @user.profile %></p>
+      <div class="profile-edit">
+        <% if @user == current_user %>
+			   <div><%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %></div>
+			   <div><%= link_to "Output", new_post_path(@post), class: "btn btn-primary" %></div>
+		  	<% end %>
+      </div>
+      <!--カレンダー機能追加予定-->
+      

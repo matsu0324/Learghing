@@ -3,21 +3,28 @@
     <div class="col-lg-5">
       <%= form_with model: @post, local:true do |f| %>
         <div class="field row">
-          <%= f.label :title %>
-          <%= f.text_field :title, class: 'col-xs-12 book_title' %>
+          <%= f.label :image, "写真", class: "label" %>
+          <%= f.attachment_field :image, class: "input" %>
+        </div>
+        <div class="field row">
+          <%= f.label :sentence %>
+          <%= f.text_area :sentence, class: 'col-xs-12 post-sentence' %>
         </div>
 
-  <div class="field row">
-    <%= f.label :opinion %>
-    <%= f.text_area :body, class: 'col-xs-12 book_body' %>
-  </div>
+        <div class="field row">
+          <%= f.label :meaning %>
+          <%= f.text_area :meaning, class: 'col-xs-12 post-meaning' %>
+        </div>
 
-  <div class="actions row">
-    <%= f.submit class: 'btn btn-primary col-xs-12' %>
-  </div>
-<% end %>
-      
-      
+        <div class="field row">
+          <%= f.label :explanation %>
+          <%= f.text_area :explanation, class: 'col-xs-12 post-explanation' %>
+        </div>
+
+        <div class="actions row">
+          <%= f.submit class: 'btn btn-primary col-xs-12' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
