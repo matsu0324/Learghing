@@ -10,9 +10,28 @@
 		      <% end %>
 		      <%= @post.user.name %>
 		    </td>
-		    <td><%= link_to @post.sentence, post_path(@post) %></td>
+		    <td><%= attachment_image_tag @post, :image, :fill, 50, 50, format: 'jpeg' %></td>
+		    <td><%= @post.sentence %></td>
 			<td><%= @post.meaning %></td>
-            <td class="favorite-btn"><%#= render 'favorites/favorite-btn', post: @post %></td>
+
+			<!--いいね機能-->
+			<% if @post.favorited_by?(current_user) %>
+				<div>
+				  <%= link_to post_favorites_path(@post), method: :delete do %>
+				    <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+				    <%= @post.favorites.count %> いいね
+				  <% end %>
+				</div>
+			<% else %>
+			<div>
+				<%= link_to post_favorites_path(@post), method: :post do %>
+				  <i class="fa fa-heart-o" aria-hidden="true"></i>
+				  <%= @post.favorites.count %> いいね
+				<% end %>
+				</div>
+			<% end %>
+      <!--非同期通信-->
+      <td class="favorite-btn"><%#= render 'favorites/favorite-btn', post: @post %></td>
 			<td class="comments-count">コメント数: <%#= @post.comments.count %></td>
 
 			<% if @post.user == current_user %>
