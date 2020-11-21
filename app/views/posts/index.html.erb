@@ -15,7 +15,9 @@
 		  		  <% end %>
   	  	  </div>
 				  <div class="sentence"><%= post.sentence %></div>
-				  <div class="favorite-btn"><%= render "favorites/favorite-btn", post: post %></div>
+				  <div id="post_<%= post.id %>">
+				  	<div class="favorite-btn"><%= render "favorites/favorite-btn", post: post %></div>
+				  </div>
 				  <div class="comments-count">コメント数: <%= post.post_comments.count %></div>
 				</div>
 			<% end %>
