@@ -8,6 +8,7 @@
         <%= @user.name %>
       </div>
       <!--フォロー機能追加予定-->
+      <%= render 'users/follow', user: @user %>
 
       <p class="profile">Profile</p>
       <p class="profile-intro"><%= @user.profile %></p>

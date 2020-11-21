@@ -4,4 +4,6 @@
 <% elsif @model == 'book' %>
 	<h3>Posts search for "<%= @content %>"</h3>
   <%= render 'posts/index', posts: @records %>
+<% else %>
+  <h2>NOT FOUND</h2>
 <% end %>
