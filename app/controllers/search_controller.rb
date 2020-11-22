@@ -7,7 +7,7 @@ class SearchController < ApplicationController
 		@method = params[:method]
 		if @model == 'user'
 			@records = User.search_for(@content, @method)
-		else
+		elsif @model == 'post'
 			@records = Post.search_for(@content, @method)
 		end
 	end

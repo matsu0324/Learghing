@@ -15,14 +15,6 @@ class Post < ApplicationRecord
   end
 
   def self.search_for(content, method)
-    if method == 'perfect'
-      Post.where(sentence: content)
-    elsif method == 'forward'
-      Post.where('sentence LIKE ?', content+'%')
-    elsif method == 'backward'
-      Post.where('sentence LIKE ?', '%'+content)
-    else
       Post.where('sentence LIKE ?', '%'+content+'%')
-    end
   end
 end

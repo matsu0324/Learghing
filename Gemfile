@@ -66,3 +66,7 @@ gem "refile-mini_magick"
 gem "bootstrap-sass", '~> 3.3.6'
 gem 'jquery-rails'
 gem "pry-rails"
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"
+gem 'dotenv-rails'

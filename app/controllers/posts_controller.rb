@@ -28,8 +28,9 @@ class PostsController < ApplicationController
     else
       @user = current_user
       @posts = Book.all
-    end
       render 'index'
+    end
+
   end
 
   def edit

@@ -1,13 +1,16 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         # Omniauthを使用するためのオプション
+         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :sns_credential, dependent: :destroy
   attachment :image
   validates :name, presence: true, length: {minimum: 2, maximum: 20}
   validates :profile, length: {maximum: 100}
-  
+
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower
@@ -24,15 +27,11 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
-  
-  
+
+
   def self.search_for(content, method)
     if method == 'perfect'
       User.where(name: content)
-    elsif method == 'forward'
-      User.where('name LIKE ?', content + '%')
-    elsif method == 'backward'
-      User.where('name LIKE ?', '%' + content)
     else
       User.where('name LIKE ?', '%' + content + '%')
     end
