@@ -10,6 +10,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts
     @post = Post.new
+    @events = Event.where(user_id: @user.id)
+    @event = Event.new
   end
 
   def edit
@@ -26,7 +28,7 @@ class UsersController < ApplicationController
     end
   end
 
-  
+
 
 private
   def user_params

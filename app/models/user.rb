@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :sns_credential, dependent: :destroy
+  has_many :events
   attachment :image
   validates :name, presence: true, length: {minimum: 2, maximum: 20}
   validates :profile, length: {maximum: 100}
