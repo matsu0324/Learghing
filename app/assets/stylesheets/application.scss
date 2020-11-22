@@ -16,25 +16,154 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- header{
-	color:white;
-}
-
-.navbar-left span{
-  font-size:20px;
-	padding-top:10px;
-}
-
-body{
-	margin-top:51px;
-}
-
-header .navbar-left span {
-	display:inline-block;
-}
 
 .search-form {
 	padding: 5px;
 	display: flex;
 	justify-content: center;
+}
+
+.heading {
+    text-align: center;
+}
+
+header{
+	color:white;
+}
+
+body{
+	margin-top:51px;
+	background-color: #FFFF99;
+}
+
+.main-visual {
+    width: 100%;
+    position: relative;
+}
+
+.main-visual p {
+  position: absolute;/*絶対配置*/
+  color: white;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  font-size: 40px;
+  font-family :Quicksand, sans-serif;/*Google Font*/
+  padding-top: 105px;
+  padding-left: 200px;
+}
+
+.main-visual img {
+  width: 100%;
+  height: 600px;
+  }
+
+.main-visual-text {
+
+}
+
+#hm-icon {
+  position: fixed;
+  right: 30px;
+  top: 10px;
+  z-index: 10;
+}
+
+.nav_toggle {
+    display: block;
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    width: 42px;
+    height: 51px;
+    cursor: pointer;
+    z-index: 3;
+    text-align: center;
+    // background-color: #CCFF99;
+}
+.nav_toggle i {
+    // display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    display: inline-block;
+    transition: all .4s;
+}
+.nav_toggle i:nth-child(1) {
+    top: 0;
+}
+.nav_toggle i:nth-child(2) {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.nav_toggle i:nth-child(3) {
+    bottom: 0;
+}
+
+.nav_toggle.show i:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+}
+.nav_toggle.show i:nth-child(2) {
+    opacity: 0;
+}
+.nav_toggle.show i:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+}
+
+.nav {
+    background: rgba(0,0,0,0.8);
+    display: none;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 98;
+}
+.nav_wrap {
+    align-items:center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+}
+.nav_menu_ul {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+}
+
+.nav_menu_li {
+    margin: 40px 0;
+}
+
+.nav_menu_li .nav_toggle{
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.nav_menu_li .nav_toggle:hover{
+    color: #666;
+}
+
+.nav.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+footer {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+  background-color: #848282;
+}
+
+.footer-text {
+  color: #fff;
 }
