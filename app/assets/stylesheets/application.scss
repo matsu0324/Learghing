@@ -23,6 +23,26 @@
 	justify-content: flex-end;
 }
 
+table {
+  border-collapse: collapse;
+  width: 1000px;
+  font-size: 12px;
+  margin: 70px;
+  text-align: center;
+}
+table th {
+  color: black;
+  background-color: lightgray;
+  padding: 10px;
+  text-align: center;
+}
+table td {
+  color: black;
+  background-color: #F5F5F5;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
 .heading {
     text-align: center;
 }
@@ -192,6 +212,51 @@ body{
 
 .output-button {
    margin: 30px auto;
+}
+
+.main-box {
+  display: flex;
+  flex-wrap: row wrap;
+}
+
+.sentence-image .image {
+  max-width:100%;
+	height: auto;
+	margin: 10px;
+	border:solid 1px #ccc;
+}
+
+.sentence {
+  display: flex;
+  flex-wrap: row wrap;
+  font-size: 20px;
+  margin: 10px;
+}
+
+
+// 投稿詳細
+.main-image {
+  text-align: center;
+}
+
+.post-info {
+  margin: 10px auto auto 140px;
+}
+
+.post-info .image {
+  border-radius: 50%;
+}
+
+.main-sentence {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 40px;
+}
+
+.main-meaning {
+  text-align: center;
+  font-size: 20px;
+  margin: 50px;
 }
 
 footer {

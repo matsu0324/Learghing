@@ -1,28 +1,43 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-9">
-      <h2>detail</h2>
-        <table class="table">
-		      <tr id="post_<%= @post.id %>">
-		        <td>
-				      <%= link_to user_path(@post.user) do %>
-				        <%= attachment_image_tag(@post.user, :image, :fill, 100, 100, fallback: "no-image.jpg") %><br>
-				      <% end %>
-				      <%= @post.user.name %>
-				    </td>
-				    <td><%= attachment_image_tag @post, :image, :fill, 50, 50, format: 'jpeg' %></td>
-				    <td><%= @post.sentence %></td>
-						<td><%= @post.meaning %></td>
-             <!--非同期通信-->
-			      <td class="favorite-btn"><%= render 'favorites/favorite-btn', post: @post %></td>
-						<td class="comments-count">コメント数: <%= @post.post_comments.count %></td>
+    <div class="col-lg-12">
+      <div class="main-image">
+		    <%= attachment_image_tag @post, :image, :fill, 850, 700, format: 'jpeg' %>
+      </div>
+      <!--非同期通信-->
+      <div id="post_<%= @post.id %>" class="post-info">
+      	<div><b>posted by
+      		<%= link_to user_path(@post.user) do %>
+				    <%= attachment_image_tag(@post.user, :image, :fill, 20, 20, fallback: "no-image.jpg") %>
+				    <%= @post.user.name %></b>
+				  <% end %>
+      	</div>
+        <div class="favorite-btn"><%= render 'favorites/favorite-btn', post: @post %></div>
+			  <div class="comments-count">コメント数: <%= @post.post_comments.count %></div>
+			</div>
+      <div class="main-sentence"><b><%= @post.sentence %></b></div>
+      <table border="1">
+      	<tr>
+      		<th>日本語訳</th><td class="main-meaning"><b><%= @post.meaning %></b></td>
+      	</tr>
+      	<tr>
+      		<th>解説</th><td class="main-meaning"><b><%= @post.explanation %></b></td>
+      	</tr>
+      </table>
+
+
+
+
+
+
 
 						<% if @post.user == current_user %>
 						  <td><%= link_to "Edit", edit_post_path(@post), class: "btn-sm btn-success" %></td>
 						  <td><%= link_to "Destroy", post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %></td>
 						<% end %>
 				  </tr>
-						</table>
+
+
 						<!--コメント投稿機能-->
 						<%= form_with(model:[@post, @post_comment], remote: true) do |f| %>
 						  <div class="row">
@@ -36,3 +51,6 @@
 						<ol class="post_comments">
 					    <%= render "post_comments/index", post: @post %>
 					  </ol>
+					  </div>
+					  </div>
+					  </div>

@@ -19,6 +19,7 @@
 			   <div class="output-button"><%= link_to "アウトプット（投稿する）", new_post_path(@post), class:"btn btn-success btn-block btn-base-1 mt-20" %></div>
 		  	<% end %>
       </div>
+      <div class="border"></div>
       <!--カレンダー機能-->
         <%= render 'events/calendar', user: @user, event: @event %>
       <!---->
@@ -75,14 +76,16 @@
       <!-------------------->
     </div>
     <div class="col-lg-8">
-      <% @posts.each do |post| %>
-        <div class="sentence-image">
-				  <%= link_to post_path(post) do %>
-		  		  <%= attachment_image_tag post, :image, :fill, 50, 50, format: 'jpeg' %>
-		  		<% end %>
-  	  	</div>
-				<div class="sentence"><%= post.sentence %></div>
-			<% end %>
+      <div class="main-box">
+        <% @posts.each do |post| %>
+         <div class="sentence-image">
+				   <%= link_to post_path(post) do %>
+		  		    <%= attachment_image_tag post, :image, :fill, 270, 270, format: 'jpeg' %>
+		  	 	  <% end %>
+		  		  <div class="sentence"><b><%= post.sentence %></b></div>
+		     </div>
+		  	<% end %>
+			</div>
     </div>
   </div>
 </div>

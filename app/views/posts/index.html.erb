@@ -14,7 +14,7 @@
 		  		    <%= attachment_image_tag post, :image, :fill, 50, 50, format: 'jpeg' %>
 		  		  <% end %>
   	  	  </div>
-				  <div class="sentence"><%= post.sentence %></div>
+				  <div class="sentence"><%= truncate(@post.sentence, length: 30) %></div>
 				  <div id="post_<%= post.id %>">
 				  	<div class="favorite-btn"><%= render "favorites/favorite-btn", post: post %></div>
 				  </div>
