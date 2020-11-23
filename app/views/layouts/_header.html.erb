@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top">
+<!--<header class="navbar navbar-fixed-top">-->
   <div class="container">
     <div id="hm-icon">
       <span class="nav_toggle">
@@ -18,7 +18,7 @@
         <% if user_signed_in? %>
           <li class="nav_munu_li"><%= link_to 'My page', user_path(current_user), class: 'glyphicon glyphicon-home home' %></li>
           <li class="nav_munu_li"><%= link_to 'Users', users_path, class: 'glyphicon glyphicon-user users' %></li>
-          <li class="nav_munu_li"><%= link_to 'Laugh', posts_path, class: 'glyphicon glyphicon-book books'%></li>
+          <li class="nav_munu_li"><%= link_to 'Laugh', posts_path, class: 'glyphicon glyphicon-post posts'%></li>
           <li class="nav_munu_li"><%= link_to 'logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
         <% else %>
           <li><%= link_to 'Home', root_path, class: 'glyphicon glyphicon-home home' %></li>
@@ -29,4 +29,4 @@
       </div>
     </nav>
   </div>
-</header>
+<!--</header>-->

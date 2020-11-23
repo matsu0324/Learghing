@@ -20,15 +20,11 @@
 .search-form {
 	padding: 5px;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 }
 
 .heading {
     text-align: center;
-}
-
-header{
-	color:white;
 }
 
 body{
@@ -36,13 +32,14 @@ body{
 	background-color: #FFFF99;
 }
 
+// topページ
 .main-visual {
     width: 100%;
     position: relative;
 }
 
 .main-visual p {
-  position: absolute;/*絶対配置*/
+  position: absolute;
   color: white;
   top: 0;
   left: 0;
@@ -62,6 +59,7 @@ body{
 
 }
 
+// ハンバーガーメニュー
 #hm-icon {
   position: fixed;
   right: 30px;
@@ -154,6 +152,46 @@ body{
 .nav.show {
     opacity: 1;
     visibility: visible;
+}
+
+// ユーザー詳細
+.profile-name {
+  font-size: 30px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.follow-number {
+  font-size: 15px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.follow-button {
+  text-align: center;
+}
+
+.user-info {
+  text-align: center;
+}
+
+.user-info .image {
+  border-radius: 50%;
+}
+
+.border {
+  border: 2px solid #BBBBBB;
+  margin: 10px;
+}
+
+.profile-heading {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.output-button {
+   margin: 30px auto;
 }
 
 footer {

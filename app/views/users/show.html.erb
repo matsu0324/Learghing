@@ -1,21 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
-      <div class="profile-image">
-        <%= attachment_image_tag @user, :image, :fill, 50, 50, fallback: "no-image.jpg" %>
+      <div class="user-info">
+        <%= attachment_image_tag @user, :image, :fill, 130, 130, fallback: "no-image.jpg" %>
       </div>
       <div class="profile-name">
-        <%= @user.name %>
+        <b><%= @user.name %></b>
       </div>
       <!--フォロー機能-->
       <%= render 'users/follow', user: @user %>
       <!---->
-      <p class="profile">Profile</p>
-      <p class="profile-intro"><%= @user.profile %></p>
+      <div class="border"></div>
+      <p class="profile-heading"><b>Profile</b></p>
+      <p class="profile-intro"><b><%= @user.profile %></b></p>
       <div class="profile-edit">
         <% if @user == current_user %>
-			   <div><%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %></div>
-			   <div><%= link_to "Output", new_post_path(@post), class: "btn btn-primary" %></div>
+			   <div><%= link_to "プロフィール編集", edit_user_path(@user), class:"btn btn-primary btn-block btn-base-1 mt-20" %></div>
+			   <div class="output-button"><%= link_to "アウトプット（投稿する）", new_post_path(@post), class:"btn btn-success btn-block btn-base-1 mt-20" %></div>
 		  	<% end %>
       </div>
       <!--カレンダー機能-->
