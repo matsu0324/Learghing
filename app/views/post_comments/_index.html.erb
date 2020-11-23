@@ -3,12 +3,14 @@
     <div class="comment-body bb">
       <div class="comment-avatar">
         <div class="avatar">
-          <%= image_tag('no-image.jpg', style: "width: 60px; height: 60px;") %>
+          <%= link_to user_path(post_comment.user) do %>
+				    <%= attachment_image_tag(post_comment.user, :image, :fill, 60, 60, fallback: "no-image.jpg") %>
+				    <%= post_comment.user.name %></b>
+				  <% end %>
         </div>
       </div>
       <div class="comment-text">
         <div class="comment-author clearfix">
-          <a href="#" class="link-author"><%= post_comment.user.name %></a>
           <span class="comment-meta">
             <span class="comment-date"><%= post_comment.created_at.strftime('%Y/%m/%d') %></span>
           </span>

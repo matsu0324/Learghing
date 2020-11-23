@@ -1,8 +1,8 @@
-<table class='table'>
+<table border="1">
   <thead>
     <tr>
-      <th>image</th>
-      <th>name</th>
+      <th>プロフィール画像</th>
+      <th>名前</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -10,9 +10,9 @@
   <tbody>
     <% users.each do |user| %>
       <tr>
-        <td><%= attachment_image_tag(user, :image, :fill, 50, 50, fallback: "no-image.jpg") %></td>
+        <td class="search-info"><%= attachment_image_tag(user, :image, :fill, 50, 50, fallback: "no-image.jpg") %></td>
         <td><%= user.name %></td>
-        <td><%= link_to 'Show', user_path(user), class: "user_#{user.id}" %></td>
+        <td><%= link_to '詳細画面へ', user_path(user), class: "user_#{user.id}" %></td>
       </tr>
     <% end %>
   </tbody>

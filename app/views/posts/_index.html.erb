@@ -1,18 +1,19 @@
-<table class='table table-hover table-inverse'>
+<table border="1">
   <thead>
     <tr>
-      <th></th>
-      <th>Title</th>
-      <th>Opinion</th>
-      <th colspan="3"></th>
+      <th>ユーザー</th>
+      <th>文章</th>
+      <th>日本語訳</th>
     </tr>
   </thead>
 
   <tbody>
     <% posts.each do |post| %>
       <tr>
-        <td><%= link_to user_path(post.user) do %>
-          <%= attachment_image_tag(post.user, :image, :fill, 50, 50, fallback: "no-image.jpg") %>
+        <td class="search-info">
+          <%= link_to user_path(post.user) do %>
+            <%= attachment_image_tag(post.user, :image, :fill, 50, 50, fallback: "no-image.jpg") %>
+            <%= post.user.name %>
           <% end %>
         </td>
         <td><%= link_to post.sentence, post_path(post), class: "post_#{post.id}" %></td>

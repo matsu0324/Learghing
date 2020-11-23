@@ -259,6 +259,26 @@ body{
   margin: 50px;
 }
 
+.edit-button {
+  margin: 20px;
+}
+
+.destroy-button {
+  margin: 20px;
+}
+
+// 検索結果
+.search-info .image {
+  border-radius: 50%;
+}
+
+// 投稿コメント
+.avatar .image {
+  border-radius: 50%;
+}
+
+
+// フッター
 footer {
   width: 100%;
   height: 120px;
