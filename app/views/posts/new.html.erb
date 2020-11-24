@@ -1,30 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-5">
-      <%= form_with model: @post, local:true do |f| %>
-        <div class="field row">
-          <%= f.label :image, "写真", class: "label" %>
-          <%= f.attachment_field :image, class: "input" %>
+<section class="slice slice-lg sct-color-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="form-user style-1 rounded has-shadow-1">
+          <div class="form-header text-center">
+            <h2 class="form-header-title"><b>新規投稿</b></h2></h2>
+          </div>
+          <div class="form-body">
+            <%= form_with model: @post, local: true do |f| %>
+              <div class="update-image">
+                <%= f.attachment_field :image, class: "input" %>
+              </div>
+              <div class="form-group">
+                <label class="control-label sr-only" for="inputSentence">英文</label>
+                  <%= f.text_area :sentence, autofocus: true, class:"form-control", id:"inputSentence", placeholder:"英文"%>
+                </div>
+                <div class="form-group">
+                  <label class="control-label sr-only" for="inputMeaning">日本語訳</label>
+                  <%= f.text_area :meaning, class:"form-control", id:"inputMeaning", placeholder:"日本語訳"%>
+                </div>
+                <div class="form-group">
+                  <label class="control-label sr-only" for="inputExplanation">解説</label>
+                  <%= f.text_area :explanation, autocomplete: "off", class:"form-control", id:"inputExplanation", placeholder:"解説" %>
+                </div>
+                <div class="submit-button">
+                  <%= f.submit "投稿する", class:"btn btn-success btn-block btn-base-1 mt-20" %>
+                </div>
+            <% end %>
+          </div>
         </div>
-        <div class="field row">
-          <%= f.label :sentence %>
-          <%= f.text_area :sentence, class: 'col-xs-12 post-sentence' %>
-        </div>
-
-        <div class="field row">
-          <%= f.label :meaning %>
-          <%= f.text_area :meaning, class: 'col-xs-12 post-meaning' %>
-        </div>
-
-        <div class="field row">
-          <%= f.label :explanation %>
-          <%= f.text_area :explanation, class: 'col-xs-12 post-explanation' %>
-        </div>
-
-        <div class="actions row">
-          <%= f.submit class: 'btn btn-primary col-xs-12' %>
-        </div>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
+</section>

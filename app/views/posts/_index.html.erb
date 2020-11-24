@@ -1,9 +1,9 @@
-<table border="1">
+<table class="table-layout" border="1">
   <thead>
     <tr>
-      <th>ユーザー</th>
-      <th>文章</th>
-      <th>日本語訳</th>
+      <th class="th-layout">ユーザー</th>
+      <th class="th-layout">文章</th>
+      <th class="th-layout">日本語訳</th>
     </tr>
   </thead>
 
@@ -16,8 +16,8 @@
             <%= post.user.name %>
           <% end %>
         </td>
-        <td><%= link_to post.sentence, post_path(post), class: "post_#{post.id}" %></td>
-        <td><%= post.meaning %></td>
+        <td class="search-info"><%= link_to post.sentence, post_path(post), class: "post_#{post.id}" %></td>
+        <td class="search-info"><%= post.meaning %></td>
       </tr>
     <% end %>
   </tbody>

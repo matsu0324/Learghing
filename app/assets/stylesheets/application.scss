@@ -23,22 +23,22 @@
 	justify-content: flex-end;
 }
 
-table {
+ .table-layout {
   border-collapse: collapse;
   width: 1000px;
   font-size: 12px;
   margin: 70px;
   text-align: center;
 }
-table th {
+.th-layout {
   color: black;
-  background-color: lightgray;
+  background-color: #00FFFF;
   padding: 10px;
   text-align: center;
 }
 table td {
   color: black;
-  background-color: #F5F5F5;
+  background-color: #99FFFF;
   padding: 10px;
   border-bottom: 1px solid lightgray;
 }
@@ -277,6 +277,20 @@ body{
   border-radius: 50%;
 }
 
+// 新規投稿
+.submit-button {
+  margin-bottom: 30px;
+}
+
+// 投稿編集画面
+.update-image {
+  margin-bottom: 30px;
+}
+.back-button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
 
 // フッター
 footer {

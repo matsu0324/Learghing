@@ -16,12 +16,12 @@
 			  <div class="comments-count">コメント数: <%= @post.post_comments.count %></div>
 			</div>
       <div class="main-sentence"><b><%= @post.sentence %></b></div>
-      <table border="1">
+      <table class="table-layout" border="1">
       	<tr>
-      		<th>日本語訳</th><td class="main-meaning"><b><%= @post.meaning %></b></td>
+      		<th class="th-layout">日本語訳</th><td class="main-meaning"><b><%= @post.meaning %></b></td>
       	</tr>
       	<tr>
-      		<th>解説</th><td class="main-meaning"><b><%= @post.explanation %></b></td>
+      		<th class="th-layout">解説</th><td class="main-meaning"><b><%= @post.explanation %></b></td>
       	</tr>
       </table>
       <% if @post.user == current_user %>

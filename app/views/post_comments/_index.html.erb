@@ -18,7 +18,7 @@
         <div class="comment-entry"><%= post_comment.comment %></div>
         <% if post_comment.user == current_user %>
           <div>
-          	<%= link_to "delete", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: "btn btn-danger", remote: true %>
+          	<%= link_to "コメントを削除する", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: "btn btn-danger", remote: true %>
           </div>
         <% end %>
       </div>

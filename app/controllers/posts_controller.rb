@@ -27,7 +27,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post), notice: "You have created post successfully."
     else
       @user = current_user
-      @posts = Book.all
+      @posts = Post.all
       render 'index'
     end
 
