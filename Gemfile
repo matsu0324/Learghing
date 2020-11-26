@@ -68,7 +68,10 @@ gem "pry-rails"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem "omniauth-rails_csrf_protection"
-gem 'dotenv-rails'
 gem 'jquery-rails', '4.3.3'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
