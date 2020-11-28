@@ -1,10 +1,14 @@
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
-<% end %>
+<div class="login-trans">
+  <%- if controller_name != 'sessions' %>
+    <%= link_to "新規登録をお済みの方はこちら", new_session_path(resource_name), class:"btn btn-info btn-block btn-base-1 mt-20" %><br />
+  <% end %>
+</div>
 
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "新規登録", new_registration_path(resource_name) %><br />
-<% end %>
+<div class="login-trans">
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    <%= link_to "新規登録はこちら", new_registration_path(resource_name), class:"btn btn-info btn-block btn-base-1 mt-20" %><br />
+  <% end %>
+</div>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   パスワードをお忘れの方は<%= link_to "こちら", new_password_path(resource_name) %><br />
@@ -20,6 +24,6 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+    <%= link_to "#{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider), method: :post %><br />
   <% end %>
 <% end %>

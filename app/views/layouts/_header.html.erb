@@ -1,32 +1,23 @@
 <!--<header class="navbar navbar-fixed-top">-->
   <div class="container">
-    <div id="hm-icon">
-      <span class="nav_toggle">
-        <i></i>
-        <i></i>
-        <i></i>
-      </span>
+    <div class="hamburger">
+  　   <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <script>
-      $('.nav_toggle').on('click', function () {
-      $('.nav_toggle, .nav').toggleClass('show');
-      });
-    </script>
-    <nav class="nav">
-      <div class="nav_wrap">
-        <ul class="nav_menu_ul">
+    <nav class="globalMenuSp">
+      <ul>
         <% if user_signed_in? %>
-          <li class="nav_munu_li"><%= link_to 'My page', user_path(current_user), class: 'glyphicon glyphicon-home home' %></li>
-          <li class="nav_munu_li"><%= link_to 'Users', users_path, class: 'glyphicon glyphicon-user users' %></li>
-          <li class="nav_munu_li"><%= link_to 'Laugh', posts_path, class: 'glyphicon glyphicon-post posts'%></li>
-          <li class="nav_munu_li"><%= link_to 'logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
+          <li><%= link_to 'My page', user_path(current_user), class: 'glyphicon glyphicon-home home' %></li>
+          <li><%= link_to 'Users', users_path, class: 'glyphicon glyphicon-user users' %></li>
+          <li><%= link_to 'Laugh', posts_path, class: 'glyphicon glyphicon-post posts'%></li>
+          <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
         <% else %>
           <li><%= link_to 'Home', root_path, class: 'glyphicon glyphicon-home home' %></li>
           <li><%= link_to 'sign up', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
           <li><%= link_to 'login', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in'%></li>
         <% end %>
       </ul>
-      </div>
     </nav>
   </div>
 <!--</header>-->

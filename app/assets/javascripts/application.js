@@ -18,3 +18,17 @@
 //= require fullcalendar
 //= require bootstrap-sprockets
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+$(function() {
+    $('.hamburger').click(function() {
+        $(this).toggleClass('active');
+
+        if ($(this).hasClass('active')) {
+            $('.globalMenuSp').addClass('active');
+        } else {
+            $('.globalMenuSp').removeClass('active');
+        }
+    });
+});
+})

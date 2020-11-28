@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'search/search'
   devise_for :users
   root 'homes#top'
+  post '/homes/guest_sign_in', to: 'homes#new_guest'
   resources :users, only: [:index, :show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
