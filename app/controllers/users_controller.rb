@@ -11,6 +11,13 @@ class UsersController < ApplicationController
     @posts = @user.posts
     @post = Post.new
     @events = Event.where(user_id: @user.id)
+    # event_arr = []
+    # @events.each do |event|
+    #   next if event.start.blank?
+
+    #   event_arr << { title: event.title, start: event.start.strftime('%F') }
+    # end
+    # @event_arr = event_arr.to_json.html_safe
     @event = Event.new
   end
 

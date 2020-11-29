@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   get 'search/search'
-  devise_for :users
+  devise_for :users, :controllers => {
+# 省略
+    sessions: 'users/sessions',
+    registrations: "users/registrations",
+
+    omniauth_callbacks: "users/omniauth_callbacks"
+}
   root 'homes#top'
   post '/homes/guest_sign_in', to: 'homes#new_guest'
   resources :users, only: [:index, :show, :edit, :update] do

@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_many :sns_credential, dependent: :destroy
   has_many :events
   attachment :image
-  validates :name, presence: true, length: {minimum: 2, maximum: 20}
-  validates :profile, length: {maximum: 100}
+  #validates :name, presence: true, length: {minimum: 2, maximum: 20}
+  #validates :profile, length: {maximum: 100}
 
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -29,7 +29,6 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
-
   def self.search_for(content, method)
     if method == 'perfect'
       User.where(name: content)
@@ -37,4 +36,12 @@ class User < ApplicationRecord
       User.where('name LIKE ?', '%' + content + '%')
     end
   end
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+    end
+  end
+
+
 end
