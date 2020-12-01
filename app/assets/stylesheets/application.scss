@@ -22,6 +22,11 @@
   box-sizing: border-box;
 }
 
+.no-image.jpg {
+  width: 130px;
+  height: 130px;
+}
+
 .search-form {
 	padding: 5px;
 	display: flex;
@@ -57,10 +62,14 @@ header {
   border-radius: 20%;
 }
 
-body{
-	margin-top:51px;
-	background-color: #FFFF99;
+body {
+  // background-image: image-url("/images/background.jpg");
+  // height: 800px;
+  // background-size: cover;
+  background-color: #FFFF99;
 }
+
+
 
 .login-trans {
   margin: 40px;
@@ -182,8 +191,8 @@ nav.globalMenuSp ul li a {
 /* このクラスを、jQueryで付与・削除する */
 nav.globalMenuSp.active {
   display: block;
-
 }
+
 
 // ユーザー一覧
 .column {
@@ -299,6 +308,7 @@ nav.globalMenuSp.active {
   font-size: 25px;
 }
 
+
 // 投稿詳細
 .main-image {
   text-align: center;
@@ -332,20 +342,24 @@ nav.globalMenuSp.active {
   margin: 20px;
 }
 
+
 // 検索結果
 .search-info .image {
   border-radius: 50%;
 }
+
 
 // 投稿コメント
 .avatar .image {
   border-radius: 50%;
 }
 
+
 // 新規投稿
 .submit-button {
   margin-bottom: 30px;
 }
+
 
 // 投稿編集画面
 .update-image {
@@ -356,6 +370,7 @@ nav.globalMenuSp.active {
   margin-bottom: 30px;
   text-align: center;
 }
+
 
 // フッター
 footer {

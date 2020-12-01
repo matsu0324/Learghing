@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.save!
+    redirect_to user_path(@user)
     @events = Event.where(user_id: current_user.id)
   end
 

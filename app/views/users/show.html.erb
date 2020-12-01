@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-4">
       <div class="user-info">
-        <%= attachment_image_tag @user, :image, :fill, 130, 130, fallback: "no-image.jpg" %>
+        <%= attachment_image_tag @user, :image, :fill, 130, 130, fallback: "no-image.jpg", size:"130x130" %>
       </div>
       <div class="profile-name">
         <b><%= @user.name %></b>
@@ -53,7 +53,7 @@
                     next: ">"
               },
               timezone: 'UTC',
-//              events: '/users/events.json',
+              events: '/users.json',
               navLinks: true,
               selectable: true,
               selectHelper: true,
