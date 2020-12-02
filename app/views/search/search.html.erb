@@ -1,8 +1,8 @@
 <% if @model == 'user' %>
-	<h3>Users search for "<%= @content %>"</h3>
+	<h2><b>"<%= @content %>"</b>の検索結果</h2>
   <%= render 'users/index', users: @records %>
 <% elsif @model == 'post' %>
-	<h3>Posts search for "<%= @content %>"</h3>
+	<h2><b>"<%= @content %>"</b>の検索結果</h2>
   <%= render 'posts/index', posts: @records %>
 <% else %>
   <h2>NOT FOUND</h2>
