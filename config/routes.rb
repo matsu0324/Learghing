@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'search/search'
+  get   'inquiry'         => 'inquiry#index'
+  post  'inquiry/confirm' => 'inquiry#confirm'
+  post  'inquiry/thanks'  => 'inquiry#thanks'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'homes#top'
   post '/homes/guest_sign_in', to: 'homes#new_guest'
