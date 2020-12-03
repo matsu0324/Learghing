@@ -121,7 +121,7 @@ body {
 }
 
 .top-block {
-  background-color: #FFFF99;
+  // background-color: #FFFF99;
 }
 
 .learghing-explanation {
@@ -130,9 +130,15 @@ body {
 }
 
 .about-image img {
-  width: 20%;
-  height: 20px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  margin-right: 10px;
+}
+
+.view-more {
+  font-size: 20px;
+  margin: 300px auto;
 }
 
 
