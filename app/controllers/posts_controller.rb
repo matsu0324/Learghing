@@ -2,11 +2,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
-
   def index
     @posts = Post.all
     @user = current_user
-    # @post_comments = Comment.where(book_id: @book.id)
   end
 
   def show

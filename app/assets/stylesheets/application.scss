@@ -312,7 +312,7 @@ nav.globalMenuSp.active {
 }
 
 .sentence-image .image {
-  max-width:100%;
+  max-width: 100%;
 	margin: 10px;
 	border:solid 1px #ccc;
 }
@@ -336,6 +336,10 @@ nav.globalMenuSp.active {
 
 .user-info-index .image {
   border-radius: 50%;
+}
+
+.index-post-image .image {
+  object-fit: cover;
 }
 
 .comments-count {
@@ -368,6 +372,10 @@ nav.globalMenuSp.active {
 // 投稿詳細
 .main-image {
   text-align: center;
+}
+
+.main-image .image {
+  object-fit: cover;
 }
 
 .post-info {

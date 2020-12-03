@@ -30,6 +30,14 @@ $(function() {
             $('.globalMenuSp').removeClass('active');
         }
     });
+    $(document).on('click', function(e) {
+      if ($('.hamburger').hasClass('active')) {
+        if (!$(e.target).closest('.hamburger').length) {
+          $('.hamburger').removeClass('active');
+          $('.globalMenuSp').removeClass('active');
+        }
+      }
+    })
 });
 })
 
