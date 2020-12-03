@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @post = Post.new
     @events = Event.where(user_id: @user.id)
     @event = Event.new
+
   end
 
   def edit

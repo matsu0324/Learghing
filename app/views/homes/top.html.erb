@@ -5,37 +5,48 @@
       笑って</br>
       楽しく</br>
       英語を</br>
-      学ぼう
+      学ぼう</br>
+      <%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"btn btn-info" %>
     </p>
   </div>
-  <h2>WHAT IS "Learghing" ?</h2>
+  <h2 class="about-learghing">About</h2>
   <div class="container">
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-5 about-sentence">
         <div>英語が嫌いでも、お笑いが好きなら、いつの間にか英語を学ぶことが楽しくなっているはずです。</div>
       </div>
-  
-      <div class="col-lg-4">
+      <div class="col-lg-5 about-sentence">
         <div>みんなが投稿した面白い英文を読んで笑うだけで、その知識はあなたのものになります。</div>
       </div>
-      <div class="col-lg-4">
+    </div>
+    <div class="row">
+      <div class="col-lg-5 about-sentence">
         <div>慣れてきたら次は面白い英文を考えてアウトプットしましょう。想像力とライティングスキルが向上します。</div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-
+      <div class="col-lg-5 about-sentence">
+        <div>コメント機能を活用して、友達の投稿を添削しましょう。人に教えることでさらに英語力を磨きましょう。</div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-4">
+  </div>
+  <div class="top-block">
+    <h2 class="about-learghing">WHAT IS "Learghing" ?</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 about-image">
+          <img src='assets/top-visual.jpg' alt="">
+        </div>
 
-      </div>
+    <div class="col-lg-6 learghing-explanation">
+      「学ぶこと」という意味の"Learning"と「笑うこと」という意味の"Laughing"を掛け合わせた造語が"Learghing(読み：ラーフィング)"です。
+
+ユーザーが撮影した画像と英単語を用いて、その画像に沿った面白い英文を考えて投稿する、笑いながら英単語を学べます。
+
+面白ければ面白いほど記憶に残りやすいので、見て笑うだけで単語を覚えられるだけでなく、自分が投稿する過程で英文を作成する為、単語のアウトプットとライティングの練習にも最適です。
     </div>
-
   </div>
 
 
 
-    <%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"btn btn-info" %>
+
+
 </div>

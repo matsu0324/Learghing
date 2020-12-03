@@ -50,18 +50,25 @@ table td {
 
 header {
   background-color: white;
+  height: 100px;
 }
 
 .main-logo {
   position: relative;
-  border-radius: 20%;
+  border-radius: 10%;
+  margin-left: 80px;
+  display: inline;
+}
+
+.search-body {
+  display: inline;
 }
 
 body {
   // background-image: image-url("/images/background.jpg");
   // height: 800px;
   // background-size: cover;
-  background-color: #FFFF99;
+  // background-color: #FFFF99;
 }
 
 
@@ -69,6 +76,8 @@ body {
 .login-trans {
   margin: 40px;
 }
+
+
 // topページ
 .main-visual {
     width: 100%;
@@ -81,7 +90,7 @@ body {
   top: 0;
   left: 0;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 70px;
   font-family :Quicksand, sans-serif;/*Google Font*/
   padding-top: 105px;
   padding-left: 200px;
@@ -89,8 +98,43 @@ body {
 
 .main-visual img {
   width: 100%;
-  height: 600px;
+  height: 750px;
+  object-fit: cover;
   }
+
+.about-learghing {
+  border-bottom: 5px solid rgba(195,216,37,0.5);
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+.about-sentence {
+  border: 1px solid black;
+  border-radius: 25%;
+  margin: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.top-block {
+  background-color: #FFFF99;
+}
+
+.learghing-explanation {
+  text-align: center;
+  font-size: 25px;
+}
+
+.about-image img {
+  width: 20%;
+  height: 20px;
+  object-fit: cover;
+}
+
 
 // ハンバーガーメニュー
 .hamburger {
