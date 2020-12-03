@@ -24,28 +24,23 @@
   box-sizing: border-box;
 }
 
-.search-form {
-	padding: 5px;
-	display: flex;
-	justify-content: flex-end;
-}
 
  .table-layout {
   border-collapse: collapse;
   width: 1000px;
   font-size: 12px;
-  margin: 70px;
+  margin: auto;
   text-align: center;
 }
 .th-layout {
   color: black;
-  background-color: #00FFFF;
+  background-color: #D3D3D3;
   padding: 10px;
   text-align: center;
 }
 table td {
   color: black;
-  background-color: #99FFFF;
+  // background-color: #99FFFF;
   padding: 10px;
   border-bottom: 1px solid lightgray;
 }
@@ -72,7 +67,6 @@ body {
   // background-size: cover;
   // background-color: #FFFF99;
 }
-
 
 
 .login-trans {
@@ -412,6 +406,12 @@ nav.globalMenuSp.active {
   border-radius: 50%;
 }
 
+.search-form {
+	padding: 5px;
+	display: flex;
+	justify-content: flex-end;
+}
+
 
 // 投稿コメント
 .avatar .image {
@@ -435,6 +435,12 @@ nav.globalMenuSp.active {
   text-align: center;
 }
 
+
+// お問い合わせ
+.inquiry-submit {
+  width: 50%;
+  margin: 50px auto;
+}
 
 // フッター
 footer {

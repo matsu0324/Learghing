@@ -1,24 +1,42 @@
-<%= form_with model: @inquiry, url: inquiry_confirm_path, local: true do |f| %>
-  <div class="page-header">
-    <h1>お問い合わせ</h1>
-  </div>
-
-  <% if @inquiry.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <strong>入力内容にエラーがあります</strong>
-      <ul>
-        <% @inquiry.errors.each do |attr, msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<section class="slice slice-lg sct-color-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="form-user style-1 rounded has-shadow-1">
+          <div class="form-header text-center">
+            <h2 class="form-header-title"><b>お問い合わせ</b></h2></h2>
+          </div>
+          <% if @inquiry.errors.any? %>
+         　<div class="alert alert-danger" role="alert">
+             <strong>入力内容にエラーがあります</strong>
+             <ul>
+               <% @inquiry.errors.each do |attr, msg| %>
+                 <li><%= msg %></li>
+               <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form-body">
+            <%= form_with model: @inquiry, url: inquiry_confirm_path, local: true do |f| %>
+              <div class="form-group">
+                <label class="control-label sr-only" for="inputName">名前（必須）</label>
+                <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputName", placeholder:"名前" %>
+              </div>
+              <div class="form-group">
+                <label class="control-label sr-only" for="inputEmail">メールアドレス（必須）</label>
+                <%= f.text_field :email, class:"form-control", id:"inputEmail", placeholder:"メールアドレス" %>
+              </div>
+              <div class="form-group">
+                <label class="control-label sr-only" for="inputMessage">お問い合わせ内容</label>
+                <%= f.text_area :message, autocomplete: "off", class:"form-control", id:"inputMessage", placeholder:"お問い合わせ内容" %>
+              </div>
+                <div class="submit-button">
+                  <%= f.submit "内容を確認する", class:"btn btn-success btn-block btn-base-1 mt-20" %>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div>名前<span class="text-danger">（必須）</span></div>
-  <div><%= f.text_field :name %></div>
-  <div>メールアドレス<span class="text-danger">（必須）</span></div>
-  <div><%= f.text_field :email %></div>
-  <div>お問い合わせ内容</div>
-  <div><%= f.text_area :message %></div>
-  <%= f.submit '確認', class: 'btn btn-primary' %>
-<% end %>
+  </div>
+</section>
