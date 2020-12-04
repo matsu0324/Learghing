@@ -9,7 +9,7 @@
             <% end %>
           </div>
           <div class="profile-content">
-            <div class="name-index"><%=link_to user.name, user_path(user) %></div>
+            <div class="name-index"><%= link_to truncate(user.name, length: 8), user_path(user) %></div>
             <div class="post-number">
               投稿数:<%= user.posts.count %>
             </div>

@@ -9,7 +9,6 @@ class SearchController < ApplicationController
 			@records = User.search_for(@content, @method)
 		elsif @model == 'post'
 			@records = Post.search_for(@content, @method)
-		
 		end
 	end
 end
