@@ -6,7 +6,9 @@
       楽しく</br>
       英語を</br>
       学ぼう</br>
-      <%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"btn btn-info" %>
+      <% if !user_signed_in? %>
+        <%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"btn btn-info" %>
+      <% end %>
     </p>
   </div>
 </div>
@@ -68,7 +70,7 @@
 			        </div>
 			  	    <div class="sentence"><b><%= truncate(post.sentence, length: 30) %></b></div>
 			  	    <div id="post_<%= post.id %>">
-			         <div class="favorite-btn"><%= render "favorites/favorite-btn", post: post %></div>
+			          <div class="favorite-btn"><%= render "favorites/favorite-btn", post: post %></div>
 			        </div>
 			       </div>
 			     <% end %>
@@ -76,10 +78,22 @@
 	  	</div>
 	  	<div class="col-lg-2">
 	  	  <div class="view-more"><%= link_to "→全投稿を見る", posts_path %></div>
+	  	  <% if !user_signed_in? %>
+  	  	  <div class="guest-login"><b>投稿の詳細を見る為にはログインが必要です。↓</b></div>
+  	  	  <div class="top-button"><%= link_to '新規登録', new_user_registration_path, class:"btn btn-warning btn-block btn-base-1 mt-20" %></div>
+          <div class="top-button"><%= link_to 'ログイン', new_user_session_path, class:"btn btn-success btn-block btn-base-1 mt-20" %></div>
+  	  	  <div class="top-button"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"btn btn-info" %></div>
+  	  	<% end %>
 	  	</div>
     </div>
 	</div>
 </div>
-
+<div class="top-block2">
+  <h2 class="about-learghing">お問い合わせ</h2>
+  <div class="about-inquiry">
+    サービスについて何かご不明な点がございましたら、下記のリンクよりお問い合わせ下さい。
+  </div>
+  <div class="about-inquiry-link"><b><%= link_to 'お問い合わせフォームへ', inquiry_path, class: 'glyphicon glyphicon-post posts'%></b></div>
+</div>
 
 

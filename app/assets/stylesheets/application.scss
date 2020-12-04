@@ -111,8 +111,8 @@ body {
   font-size: 25px;
 }
 
-.top-block {
-  // background-color: #FFFF99;
+.top-block2 {
+  padding-top: 50px;
 }
 
 .learghing-explanation {
@@ -129,7 +129,27 @@ body {
 
 .view-more {
   font-size: 20px;
-  margin: 300px auto;
+  margin: 30px auto;
+}
+
+.guest-login {
+  font-size: 15px;
+}
+
+.top-button {
+  margin: 20px;
+}
+
+.about-inquiry {
+  text-align: center;
+  font-size: 15px;
+  margin: 20px;
+}
+
+.about-inquiry-link {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 50px;
 }
 
 // トップに戻るボタン
@@ -241,7 +261,8 @@ nav.globalMenuSp.active {
 
 
 // ユーザー一覧
-.column {
+.user-block {
+  margin: 40px;
 }
 .user-index {
   border: 1px solid #dee2e6;
@@ -249,6 +270,11 @@ nav.globalMenuSp.active {
 }
 .image-box .image {
   border-radius: 50%;
+}
+.post-number {
+  border-bottom: 2px solid #BBBBBB;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 
@@ -396,6 +422,10 @@ nav.globalMenuSp.active {
   margin: 20px;
 }
 
+.post-name {
+  text-align: center;
+}
+
 
 // 検索結果
 .search-info .image {
@@ -412,9 +442,21 @@ nav.globalMenuSp.active {
   display: inline;
 }
 
+
 // 投稿コメント
+.comment-block {
+  margin-top: 50px;
+}
 .avatar .image {
   border-radius: 50%;
+}
+
+.comment-entry {
+  font-size: 20px;
+}
+
+.comment-area {
+  margin-bottom: 30px;
 }
 
 
@@ -432,6 +474,23 @@ nav.globalMenuSp.active {
   margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
+}
+
+
+// フォロー関係
+.follow-page {
+  text-align: center;
+}
+
+.no-user {
+  text-align: center;
+  margin: 40px;
+  font-size: 25px;
+}
+
+.user-link {
+  text-align: center;
+  font-size: 20px;
 }
 
 
@@ -458,6 +517,13 @@ nav.globalMenuSp.active {
   background-image: url("thanks.jpg");
   background-size:cover;
 }
+
+
+// カレンダー
+.calendar-render {
+  margin: 30px auto;
+}
+
 
 // フッター
 footer {
