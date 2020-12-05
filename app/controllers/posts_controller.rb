@@ -22,11 +22,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to post_path(@post), notice: "You have created post successfully."
+      redirect_to post_path(@post), notice: "投稿しました。"
     else
       @user = current_user
       @posts = Post.all
-      render 'index'
+      render 'new'
     end
 
   end
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: "You have updated post successfully."
+      redirect_to post_path(@post), notice: "投稿を更新しました。"
     else
       render 'edit'
     end

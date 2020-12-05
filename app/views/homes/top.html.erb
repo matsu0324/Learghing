@@ -7,6 +7,8 @@
       英語を</br>
       学ぼう</br>
       <% if !user_signed_in? %>
+        <%= link_to '新規登録', new_user_registration_path, class:"btn btn-warning" %>
+        <%= link_to 'ログイン', new_user_session_path, class:"btn btn-success" %></br>
         <%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"btn btn-info" %>
       <% end %>
     </p>

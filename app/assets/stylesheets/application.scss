@@ -68,9 +68,18 @@ body {
   margin: 40px;
 }
 
+.sns-login {
+  margin: 30px auto;
+}
+
 // フラッシュ・エラーメッセージ
 #notice {
   font-size: 20px;
+  margin-left: 0;
+  // background-color: #7CFC00;
+}
+#error_explanation {
+  color: #FF0000;
 }
 
 
@@ -109,11 +118,12 @@ body {
 }
 
 .about-sentence {
-  border: 1px solid black;
-  border-radius: 25%;
+
   margin: 20px;
   text-align: center;
   font-size: 25px;
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+  background-color: #FFFFCC;
 }
 
 .top-block2 {
@@ -446,6 +456,9 @@ nav.globalMenuSp.active {
 
 .search-body {
   display: inline;
+}
+.search-result {
+  text-align: center;
 }
 
 

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(current_user), notice: "You have updated profile successfully."
+      redirect_to user_path(current_user), notice: "プロフィールを更新しました。"
     else
       # @posts = @user.posts
       render "edit"

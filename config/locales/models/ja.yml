@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        image: 画像
+        sentence: 英文
+        meaning: 意味
+        explanation: 解説

@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :events
   attachment :image
   #validates :name, presence: true, length: {minimum: 2, maximum: 20}
-  #validates :profile, length: {maximum: 100}
+  validates :profile, length: {maximum: 100}
 
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy

@@ -71,6 +71,7 @@ gem "omniauth-rails_csrf_protection"
 gem 'jquery-rails', '4.3.3'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'rails-i18n', '~> 5.1'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
-      
-      <div class="container">
+
+      <div>
         <% if flash[:notice] %>
           <p id="notice" style="color: #00ff7f;"><%= notice %></p>
         <% end %>
       </div>
-      
+
       <div class="user-info">
         <%= attachment_image_tag @user, :image, fallback: "no-image.jpg", size:"200x200" %>
       </div>
@@ -106,6 +106,7 @@
               // event クリックで編集、削除
               eventClick : function(event, jsEvent , view) {
                   jsEvent.preventDefault();
+                  console.log('event', event.id)
                   $(`#inputScheduleEditForm${event.id}`).modal('show');
               },
 
@@ -128,6 +129,9 @@
 		       <!--<div>投稿がありません。</div>-->
 		  	<% end %>
 			</div>
+			<div class="favorited-post">
+        <h2 class="about-learghing">いいね一覧</h2>
+    </div>
     </div>
   </div>
 </div>
