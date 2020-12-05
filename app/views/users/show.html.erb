@@ -1,6 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
+      
+      <div class="container">
+        <% if flash[:notice] %>
+          <p id="notice" style="color: #00ff7f;"><%= notice %></p>
+        <% end %>
+      </div>
+      
       <div class="user-info">
         <%= attachment_image_tag @user, :image, fallback: "no-image.jpg", size:"200x200" %>
       </div>

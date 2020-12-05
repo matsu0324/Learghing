@@ -68,6 +68,11 @@ body {
   margin: 40px;
 }
 
+// フラッシュ・エラーメッセージ
+#notice {
+  font-size: 20px;
+}
+
 
 // topページ
 .main-visual {
@@ -359,6 +364,7 @@ nav.globalMenuSp.active {
 }
 
 .comments-count {
+  margin-bottom: 20px;
   border-bottom: 2px solid #BBBBBB;
   border-collapse: collapse;
   border-spacing: 0;
