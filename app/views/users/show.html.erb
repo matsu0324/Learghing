@@ -118,6 +118,7 @@
       <!-------------------->
     </div>
     <div class="col-lg-8">
+      <h2 class="about-learghing"><b><%= @user.name %>の投稿</b></h2>
       <div class="main-box">
         <% @posts.each do |post| %>
           <div class="sentence-image">
@@ -129,20 +130,21 @@
 		       <!--<div>投稿がありません。</div>-->
 		  	<% end %>
 			</div>
+			<% if @user == current_user %>
 			<div class="favorited-post">
-        <h2 class="about-learghing">いいね一覧</h2>
+        <h2 class="about-learghing"><b><%= @user.name %>のいいね一覧</b></h2>
         <div class="main-box">
-        <%# @favorites.each do |post| %>
+        <% @user.favorited_posts.each do |post| %>
           <div class="sentence-image">
-				    <%#= link_to post_path(post) do %>
-		  		    <%#= attachment_image_tag post, :image, class:"sentence-picture", format: 'jpeg' %>
-		  	 	  <%# end %>
-		  		  <div class="sentence"><b><%#= post.sentence %></b></div>
+				    <%= link_to post_path(post) do %>
+		  		    <%= attachment_image_tag post, :image, class:"sentence-picture", format: 'jpeg' %>
+		  	 	  <% end %>
+		  		  <div class="sentence"><b><%= post.sentence %></b></div>
 		       </div>
-		       <!--<div>投稿がありません。</div>-->
-		  	<%# end %>
+		  	<% end %>
 			</div>
       </div>
+    <% end %>
     </div>
   </div>
 </div>
