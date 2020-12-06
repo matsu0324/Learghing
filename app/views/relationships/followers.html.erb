@@ -1,6 +1,6 @@
 <h2 class="about-learghing"><b>全フォロワー</b></h2>
 <% if @users.exists? %>
-  <%= render '/users/index', users: @users %>
+  <%= render "/users/index", users: @users %>
 <% else %>
   <p class="no-user">ユーザーはいません</p>
   <% if @user == current_user %>
