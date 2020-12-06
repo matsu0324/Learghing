@@ -10,7 +10,7 @@
             <%= form_with model:@user, url:session_path(resource_name), local:true do |f| %>
               <div class="form-group">
                 <label class="control-label sr-only" for="name">Name</label>
-                <%= f.text_field :name, autofocus: true, class:"form-control", id:"name", placeholder:"名前"%>
+                <%= f.text_field :name, autofocus: true, class:"form-control", id:"name", placeholder:"名前" %>
               </div>
               <div class="form-group">
                 <label class="control-label sr-only" for="inputPassword">Password</label>

@@ -1,15 +1,15 @@
 <div class="main-visual">
   <div class="main-visual-content">
-    <img src='assets/top-visual.jpg' alt="">
+    <img src="assets/top-visual.jpg" alt="">
     <p class="main-visual-text">
       笑って</br>
       楽しく</br>
       英語を</br>
       学ぼう</br>
       <% if !user_signed_in? %>
-        <%= link_to '新規登録', new_user_registration_path, class:"btn btn-warning" %>
-        <%= link_to 'ログイン', new_user_session_path, class:"btn btn-success" %></br>
-        <%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"btn btn-info" %>
+        <%= link_to "新規登録", new_user_registration_path, class:"btn btn-warning" %>
+        <%= link_to "ログイン", new_user_session_path, class:"btn btn-success" %></br>
+        <%= link_to "ゲストログイン（閲覧用）", homes_guest_sign_in_path, method: :post, class:"btn btn-info" %>
       <% end %>
     </p>
   </div>
@@ -40,7 +40,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 about-image">
-        <img src='assets/about-visual.jpg' alt="">
+        <img src="assets/about-visual.jpg" alt="">
       </div>
       <div class="col-lg-8 learghing-explanation">
         <p>「学ぶこと」という意味の"Learning"と「笑うこと」という意味の"Laughing"を合わせた造語が<b>"Learghing(ラーフィング)"</b>です。</p>
@@ -67,7 +67,7 @@
 			        </div>
 			        <div>
 			    	    <%= link_to post_path(post) do %>
-			            <%= attachment_image_tag post, :image, class:"sentence-picture", format: 'jpeg' %>
+			            <%= attachment_image_tag post, :image, class:"sentence-picture", format: "jpeg" %>
 			  	      <% end %>
 			        </div>
 			  	    <div class="sentence"><b><%= truncate(post.sentence, length: 30) %></b></div>
@@ -82,9 +82,9 @@
 	  	  <div class="view-more"><%= link_to "→全投稿を見る", posts_path %></div>
 	  	  <% if !user_signed_in? %>
   	  	  <div class="guest-login"><b>投稿の詳細を見る為にはログインが必要です。↓</b></div>
-  	  	  <div class="top-button"><%= link_to '新規登録', new_user_registration_path, class:"btn btn-warning btn-block btn-base-1 mt-20" %></div>
-          <div class="top-button"><%= link_to 'ログイン', new_user_session_path, class:"btn btn-success btn-block btn-base-1 mt-20" %></div>
-  	  	  <div class="top-button"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"btn btn-info" %></div>
+  	  	  <div class="top-button"><%= link_to "新規登録", new_user_registration_path, class:"btn btn-warning btn-block btn-base-1 mt-20" %></div>
+          <div class="top-button"><%= link_to "ログイン", new_user_session_path, class:"btn btn-success btn-block btn-base-1 mt-20" %></div>
+  	  	  <div class="top-button"><%= link_to "ゲストログイン（閲覧用）", homes_guest_sign_in_path, method: :post, class:"btn btn-info" %></div>
   	  	<% end %>
 	  	</div>
     </div>
@@ -95,7 +95,5 @@
   <div class="about-inquiry">
     サービスについて何かご不明な点がございましたら、下記のリンクよりお問い合わせ下さい。
   </div>
-  <div class="about-inquiry-link"><b><%= link_to 'お問い合わせフォームへ', inquiry_path, class: 'glyphicon glyphicon-post posts'%></b></div>
+  <div class="about-inquiry-link"><b><%= link_to "お問い合わせフォームへ", inquiry_path, class: "glyphicon glyphicon-post posts" %></b></div>
 </div>
-
-
