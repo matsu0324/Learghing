@@ -3,7 +3,7 @@ class SearchController < ApplicationController
 
 	def search
 		return unless params[:content].present?
-		
+
 		@model = params[:model]
 		@content = params[:content]
 		@method = params[:method]
