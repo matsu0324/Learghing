@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="main-image">
-		    <%= attachment_image_tag @post, :image, :fill, 850, 700, format: 'jpeg' %>
+		    <%= attachment_image_tag @post, :image, :fill, 850, 700, format: "jpeg" %>
       </div>
       <!--非同期通信-->
       <div id="post_<%= @post.id %>" class="post-info">
@@ -12,7 +12,7 @@
 				    <%= @post.user.name %></b>
 				  <% end %>
       	</div>
-        <div class="favorite-btn"><%= render 'favorites/favorite-btn', post: @post %></div>
+        <div class="favorite-btn"><%= render "favorites/favorite-btn", post: @post %></div>
 			  <div class="comments-count">コメント数: <%= @post.post_comments.count %></div>
 			</div>
       <div class="main-sentence"><b><%= @post.sentence %></b></div>
