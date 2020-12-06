@@ -1,4 +1,5 @@
 class InquiryController < ApplicationController
+
   def index
     @inquiry = Inquiry.new
     render :action => 'index'
@@ -14,7 +15,7 @@ class InquiryController < ApplicationController
   end
 
   def thanks
-    @inquiry = Inquiry.new(params[:inquiry].permit(:name, :email, :message))    
+    @inquiry = Inquiry.new(params[:inquiry].permit(:name, :email, :message))
     InquiryMailer.received_email(@inquiry).deliver
     render :action => 'thanks'
   end

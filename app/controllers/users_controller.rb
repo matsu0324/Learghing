@@ -23,11 +23,9 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(current_user), notice: "プロフィールを更新しました。"
     else
-      # @posts = @user.posts
       render "edit"
     end
   end
-
 
 
 private
@@ -42,10 +40,3 @@ private
     end
   end
 end
-
-
-
-
-
-
-

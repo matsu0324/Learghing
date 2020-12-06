@@ -1,8 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :user
-  attachment :image
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+
+  attachment :image
   validates :image, presence: true
 	with_options presence: true do
     validates :sentence
@@ -15,6 +16,6 @@ class Post < ApplicationRecord
   end
 
   def self.search_for(content, method)
-      Post.where('sentence LIKE ? OR meaning LIKE ?', '%'+content+'%', '%'+content+'%')
+      Post.where("sentence LIKE ? OR meaning LIKE ?", "%"+content+"%", "%"+content+"%")
   end
 end
