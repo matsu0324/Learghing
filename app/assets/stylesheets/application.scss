@@ -400,6 +400,10 @@ nav.globalMenuSp.active {
   font-size: 25px;
 }
 
+.favorited-post {
+  margin-top: 40px;
+}
+
 
 // 投稿詳細
 .main-image {
@@ -444,8 +448,12 @@ nav.globalMenuSp.active {
 
 
 // 検索結果
-.search-info .image {
+.search-info-image .image {
   border-radius: 50%;
+}
+
+.search-info {
+  font-size: 20px;
 }
 
 .search-form {
@@ -458,7 +466,22 @@ nav.globalMenuSp.active {
   display: inline;
 }
 .search-result {
+  border-bottom: 5px solid rgba(195,216,37,0.5);
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
   text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+}
+
+.not-found {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
 }
 
 

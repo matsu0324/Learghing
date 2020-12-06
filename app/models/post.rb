@@ -15,6 +15,6 @@ class Post < ApplicationRecord
   end
 
   def self.search_for(content, method)
-      Post.where('sentence LIKE ?', '%'+content+'%')
+      Post.where('sentence LIKE ? OR meaning LIKE ?', '%'+content+'%', '%'+content+'%')
   end
 end

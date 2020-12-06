@@ -2,6 +2,8 @@ class SearchController < ApplicationController
   before_action :authenticate_user!
 
 	def search
+		return unless params[:content].present?
+		
 		@model = params[:model]
 		@content = params[:content]
 		@method = params[:method]

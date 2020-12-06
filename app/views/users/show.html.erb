@@ -32,15 +32,14 @@
       <div class="calendar-render">
         <%= render 'events/calendar', user: @user, event: @event %>
       </div>
-
       <!---->
       <!-- カレンダー編集 -------------------------------------------------->
-        <div id="inputEditForm">
-          <%= render 'events/edit', events: @events %>
-        </div>
-        <script>
+      <div id="inputEditForm">
+        <%= render 'events/edit', events: @events %>
+      </div>
+      <script>
         // CRUDを行う際にCSRF対策のtokenを発行
-          $(document).ready(function() {
+        $(document).ready(function() {
           var prepare = function(options, originalOptions, jqXHR) {
             var token;
             if (!options.crossDomain) {
@@ -113,8 +112,8 @@
               eventMouseover : function(event, jsEvent , view) {
                   jsEvent.preventDefault();
               }
-          })
-        </script>
+        })
+      </script>
       <!-------------------->
     </div>
     <div class="col-lg-8">
@@ -127,24 +126,23 @@
 		  	 	  <% end %>
 		  		  <div class="sentence"><b><%= post.sentence %></b></div>
 		       </div>
-		       <!--<div>投稿がありません。</div>-->
 		  	<% end %>
 			</div>
 			<% if @user == current_user %>
-			<div class="favorited-post">
-        <h2 class="about-learghing"><b><%= @user.name %>のいいね一覧</b></h2>
-        <div class="main-box">
-        <% @user.favorited_posts.each do |post| %>
-          <div class="sentence-image">
-				    <%= link_to post_path(post) do %>
-		  		    <%= attachment_image_tag post, :image, class:"sentence-picture", format: 'jpeg' %>
-		  	 	  <% end %>
-		  		  <div class="sentence"><b><%= post.sentence %></b></div>
-		       </div>
-		  	<% end %>
-			</div>
-      </div>
-    <% end %>
+			  <div class="favorited-post">
+          <h2 class="about-learghing"><b><%= @user.name %>のいいね一覧</b></h2>
+          <div class="main-box">
+            <% @user.favorited_posts.each do |post| %>
+              <div class="sentence-image">
+				        <%= link_to post_path(post) do %>
+		  		        <%= attachment_image_tag post, :image, class:"sentence-picture", format: 'jpeg' %>
+		  	 	      <% end %>
+		  		      <div class="sentence"><b><%= post.sentence %></b></div>
+		          </div>
+		  	    <% end %>
+			    </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

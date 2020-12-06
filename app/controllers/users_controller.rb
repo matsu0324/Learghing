@@ -12,9 +12,6 @@ class UsersController < ApplicationController
     @post = Post.new
     @events = Event.where(user_id: @user.id)
     @event = Event.new
-    # user_ids = current.favorites.pluck(:id)
-    # favorite = Post.where(user_id: user_ids)
-    # @favorites = favorite
   end
 
   def edit

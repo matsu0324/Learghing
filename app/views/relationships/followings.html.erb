@@ -1,7 +1,9 @@
-<h2 class="follow-page"><b>全フォロー</b></h2>
+<h2 class="about-learghing"><b>全フォロー</b></h2>
 <% if @users.exists? %>
   <%= render '/users/index', users: @users %>
 <% else %>
   <p class="no-user">ユーザーはいません</p>
-  <p class="user-link"><%= link_to "ユーザーを探す", users_path %></p>
+  <% if @user == current_user %>
+    <p class="user-link"><%= link_to "ユーザーを探す", users_path %></p>
+  <% end %>
 <% end %>

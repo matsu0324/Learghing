@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :events
   attachment :image
   #validates :name, presence: true, length: {minimum: 2, maximum: 20}
+  validates :name, uniqueness: true
   validates :profile, length: {maximum: 100}
 
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -37,6 +38,7 @@ class User < ApplicationRecord
       User.where('name LIKE ?', '%' + content + '%')
     end
   end
+  
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

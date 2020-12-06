@@ -1,37 +1,37 @@
 <h3 class="text-center"><b>勉強記録用カレンダー</b></h3>
-  <div id="calendar">
-    <% if user_signed_in? %>
-      <% if user.id == current_user.id %>
-        <div id="inputScheduleForm" class="modal fade" tabindex="-1">
-          <div class="modal-dialog modal-nm">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">スケジュール登録</h4>
-              </div>
-              <div class="modal-body">
-                <%= form_with model: event, url: events_path do |f| %>
-                  <div  class="col">
-                    <p>
-                      <span>タイトル</span>
-                      <span><%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
-                    </p>
-                    <span>開始日時</span>
-                    <span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
-                    <span>終了日時</span>
-                    <span><%= f.datetime_field :end, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
-                    <span>詳細
-                    <%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %></span>
-                  </div>
-                  <div class="modal-footer">
-                    <%= f.submit "登録する", class: "btn btn-primary" %>
-                    <%= f.hidden_field :user_id, :value => current_user.id %>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-                  </div>
-                <% end %>
-              </div>
+<div id="calendar">
+  <% if user_signed_in? %>
+    <% if user.id == current_user.id %>
+      <div id="inputScheduleForm" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-nm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">スケジュール登録</h4>
+            </div>
+            <div class="modal-body">
+              <%= form_with model: event, url: events_path do |f| %>
+                <div  class="col">
+                  <p>
+                    <span>予定</span>
+                    <span><%= f.text_field :title, class: "form-control", placeholder: "予定を入力してください(必須)" %></span>
+                  </p>
+                  <span>開始日時</span>
+                  <span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
+                  <span>終了日時</span>
+                  <span><%= f.datetime_field :end, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
+                  <span>詳細
+                  <%= f.text_field :body, class: "form-control", placeholder: "予定の詳細を記入してください(任意)" %></span>
+                </div>
+                <div class="modal-footer">
+                  <%= f.submit "登録する", class: "btn btn-primary" %>
+                  <%= f.hidden_field :user_id, :value => current_user.id %>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
