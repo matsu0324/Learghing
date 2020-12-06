@@ -7,12 +7,12 @@
             <h2 class="form-header-title"><b>お問い合わせ</b></h2></h2>
           </div>
           <% if @inquiry.errors.any? %>
-         　<div class="alert alert-danger" role="alert">
-             <strong>入力内容にエラーがあります</strong>
-             <ul>
-               <% @inquiry.errors.each do |attr, msg| %>
-                 <li><%= msg %></li>
-               <% end %>
+            <div class="alert alert-danger" role="alert">
+              <strong>入力内容にエラーがあります</strong>
+              <ul>
+                <% @inquiry.errors.each do |attr, msg| %>
+                  <li><%= msg %></li>
+                <% end %>
               </ul>
             </div>
           <% end %>

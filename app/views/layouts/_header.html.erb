@@ -1,24 +1,22 @@
-<!--<header class="navbar navbar-fixed-top">-->
-  <div class="container">
-    <div class="hamburger">
-  　   <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav class="globalMenuSp">
-      <ul>
-        <% if user_signed_in? %>
-          <li><%= link_to 'マイページ', user_path(current_user), class: 'glyphicon glyphicon-home home' %></li>
-          <li><%= link_to '笑って学ぶ', posts_path, class: 'glyphicon glyphicon-eye-open' %></li>
-          <li><%= link_to 'ユーザーを探す', users_path, class: 'glyphicon glyphicon-user users' %></li>
-          <li><%= link_to 'お問い合わせ', inquiry_path, class: 'glyphicon glyphicon-envelope' %></li>
-          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
-        <% else %>
-          <li><%= link_to 'ホーム', root_path, class: 'glyphicon glyphicon-home home' %></li>
-          <li><%= link_to '新規登録', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
-          <li><%= link_to 'ログイン', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in'%></li>
-        <% end %>
-      </ul>
-    </nav>
+<div class="container">
+  <div class="hamburger">
+　  <span></span>
+    <span></span>
+    <span></span>
   </div>
-<!--</header>-->
+  <nav class="globalMenuSp">
+    <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "マイページ", user_path(current_user), class: "glyphicon glyphicon-home home" %></li>
+        <li><%= link_to "笑って学ぶ", posts_path, class: "glyphicon glyphicon-eye-open" %></li>
+        <li><%= link_to "ユーザーを探す", users_path, class: "glyphicon glyphicon-user users" %></li>
+        <li><%= link_to "お問い合わせ", inquiry_path, class: "glyphicon glyphicon-envelope" %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out logout" %></li>
+      <% else %>
+        <li><%= link_to "ホーム", root_path, class: "glyphicon glyphicon-home home" %></li>
+        <li><%= link_to "新規登録", new_user_registration_path, class: "glyphicon glyphicon-edit sign_up" %></li>
+        <li><%= link_to "ログイン", new_user_session_path, class: "glyphicon glyphicon-log-in sign_in" %></li>
+      <% end %>
+    </ul>
+  </nav>
+</div>
