@@ -15,7 +15,7 @@
         <b><%= @user.name %></b>
       </div>
       <!--フォロー機能-->
-      <%= render 'users/follow', user: @user %>
+      <%= render "users/follow", user: @user %>
       <!---->
       <div class="border"></div>
       <p class="profile-heading"><b>プロフィール</b></p>
@@ -30,12 +30,12 @@
 
       <!--カレンダー機能-->
       <div class="calendar-render">
-        <%= render 'events/calendar', user: @user, event: @event %>
+        <%= render "events/calendar", user: @user, event: @event %>
       </div>
       <!---->
       <!-- カレンダー編集 -------------------------------------------------->
       <div id="inputEditForm">
-        <%= render 'events/edit', events: @events %>
+        <%= render "events/edit", events: @events %>
       </div>
       <script>
         // CRUDを行う際にCSRF対策のtokenを発行
@@ -122,7 +122,7 @@
         <% @posts.each do |post| %>
           <div class="sentence-image">
 				    <%= link_to post_path(post) do %>
-		  		    <%= attachment_image_tag post, :image, class:"sentence-picture", format: 'jpeg' %>
+		  		    <%= attachment_image_tag post, :image, class:"sentence-picture", format: "jpeg" %>
 		  	 	  <% end %>
 		  		  <div class="sentence"><b><%= post.sentence %></b></div>
 		       </div>
@@ -135,7 +135,7 @@
             <% @user.favorited_posts.each do |post| %>
               <div class="sentence-image">
 				        <%= link_to post_path(post) do %>
-		  		        <%= attachment_image_tag post, :image, class:"sentence-picture", format: 'jpeg' %>
+		  		        <%= attachment_image_tag post, :image, class:"sentence-picture", format: "jpeg" %>
 		  	 	      <% end %>
 		  		      <div class="sentence"><b><%= post.sentence %></b></div>
 		          </div>
