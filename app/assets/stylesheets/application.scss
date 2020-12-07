@@ -114,7 +114,7 @@ body {
   margin-bottom: 20px;
   text-align: center;
   margin-top: 50px;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .about-sentence {
@@ -129,6 +129,7 @@ body {
 .top-block2 {
   height: 600px;
   position: relative;
+  margin-top: 50px;
 }
 
 .bg {
@@ -155,24 +156,25 @@ body {
   text-align: center;
   font-size: 50px;
   color: white;
+  padding-top: 20px;
 }
 
 .learghing-explanation {
   font-size: 23px;
-  width: 80%; /*absoluteで位置を設定するときに、幅と高さは必ず必要*/
+  width: 80%;
   height: 1.5em;
   color: white;
   font-weight: bold;
   text-align: center;
-
-    /*位置の設定 - 上下中央寄せ*/
   position: absolute;
   margin: auto;
   top: 0;
   bottom: 400px;
 }
 
-
+.last-sentence {
+  padding-bottom: 20px;
+}
 
 .top-block3 {
   padding-top: 50px;
@@ -183,9 +185,36 @@ body {
 }
 
 .top-block5 {
-  padding-top: 50px;
+  height: 600px;
+  position: relative;
+  margin-top: 50px;
 }
 
+.bg2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: image-url("inquiry_back.jpg");
+  background-size:cover;
+  opacity: 1;
+ }
+
+.about-inquiry {
+  font-size: 23px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.about-inquiry-link {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 150px;
+  padding-bottom: 70px;
+}
 
 .about-image img {
   width: 100%;
@@ -207,23 +236,7 @@ body {
   margin: 20px;
 }
 
-.about-inquiry {
-  text-align: center;
-  font-size: 15px;
-  margin: 20px;
-}
 
-.about-inquiry-link {
-  text-align: center;
-  font-size: 25px;
-  margin-bottom: 50px;
-}
-
-// . {
-//   height: 800px;
-//   background-image: url("thanks.jpg");
-//   background-size:cover;
-// }
 
 // トップに戻るボタン
 #back {
