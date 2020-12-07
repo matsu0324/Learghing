@@ -55,40 +55,40 @@
     <!--オススメ投稿一覧・表示-->
   <div class="container">
     <div class="row">
-  	  <div class="col-lg-10">
-		    <div class="main-box">
+      <div class="col-lg-10">
+        <div class="main-box">
           <% @recommended_posts.each do |post| %>
             <div class="sentence-image">
               <div class="user-info-index">
-			          <%= link_to user_path(post.user) do %>
-			            <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "no-image.jpg", size:"50x50" %>
-			            <%= post.user.name %>
-			          <% end %>
-			        </div>
-			        <div>
-			    	    <%= link_to post_path(post) do %>
-			            <%= attachment_image_tag post, :image, class:"sentence-picture", format: "jpeg" %>
-			  	      <% end %>
-			        </div>
-			  	    <div class="sentence"><b><%= truncate(post.sentence, length: 30) %></b></div>
-			  	    <div id="post_<%= post.id %>">
-			          <div class="favorite-btn"><%= render "favorites/favorite-btn", post: post %></div>
-			        </div>
-			       </div>
-			     <% end %>
-			  </div>
-	  	</div>
-	  	<div class="col-lg-2">
-	  	  <div class="view-more"><%= link_to "→全投稿を見る", posts_path %></div>
-	  	  <% if !user_signed_in? %>
-  	  	  <div class="guest-login"><b>投稿の詳細を見る為にはログインが必要です。↓</b></div>
-  	  	  <div class="top-button"><%= link_to "新規登録", new_user_registration_path, class:"btn btn-warning btn-block btn-base-1 mt-20" %></div>
+                <%= link_to user_path(post.user) do %>
+                  <%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback: "no-image.jpg", size:"50x50" %>
+                  <%= post.user.name %>
+                <% end %>
+              </div>
+              <div>
+                <%= link_to post_path(post) do %>
+                  <%= attachment_image_tag post, :image, class:"sentence-picture", format: "jpeg" %>
+                <% end %>
+              </div>
+              <div class="sentence"><b><%= truncate(post.sentence, length: 30) %></b></div>
+              <div id="post_<%= post.id %>">
+                <div class="favorite-btn"><%= render "favorites/favorite-btn", post: post %></div>
+              </div>
+             </div>
+           <% end %>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="view-more"><%= link_to "→全投稿を見る", posts_path %></div>
+        <% if !user_signed_in? %>
+          <div class="guest-login"><b>投稿の詳細を見る為にはログインが必要です。↓</b></div>
+          <div class="top-button"><%= link_to "新規登録", new_user_registration_path, class:"btn btn-warning btn-block btn-base-1 mt-20" %></div>
           <div class="top-button"><%= link_to "ログイン", new_user_session_path, class:"btn btn-success btn-block btn-base-1 mt-20" %></div>
-  	  	  <div class="top-button"><%= link_to "ゲストログイン（閲覧用）", homes_guest_sign_in_path, method: :post, class:"btn btn-info" %></div>
-  	  	<% end %>
-	  	</div>
+          <div class="top-button"><%= link_to "ゲストログイン（閲覧用）", homes_guest_sign_in_path, method: :post, class:"btn btn-info" %></div>
+        <% end %>
+      </div>
     </div>
-	</div>
+  </div>
 </div>
 <div class="top-block2">
   <h2 class="about-learghing"><b>お問い合わせ</b></h2>
