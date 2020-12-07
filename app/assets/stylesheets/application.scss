@@ -127,13 +127,65 @@ body {
 }
 
 .top-block2 {
-  padding-top: 50px;
+  height: 600px;
+  position: relative;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-image: image-url("what_learghing.jpg");
+  background-size:cover;
+  opacity: 1;
+ }
+
+ .contents-bg {
+   background-color: rgba(0,0,0,0.6);
+ }
+
+ .what_learghing {
+  border-bottom: 5px solid rgba(195,216,37,0.5);
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
 }
 
 .learghing-explanation {
+  font-size: 23px;
+  width: 80%; /*absoluteで位置を設定するときに、幅と高さは必ず必要*/
+  height: 1.5em;
+  color: white;
+  font-weight: bold;
   text-align: center;
-  font-size: 25px;
+
+    /*位置の設定 - 上下中央寄せ*/
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 400px;
 }
+
+
+
+.top-block3 {
+  padding-top: 50px;
+}
+
+.top-block4 {
+  padding-top: 50px;
+}
+
+.top-block5 {
+  padding-top: 50px;
+}
+
 
 .about-image img {
   width: 100%;
@@ -166,6 +218,12 @@ body {
   font-size: 25px;
   margin-bottom: 50px;
 }
+
+// . {
+//   height: 800px;
+//   background-image: url("thanks.jpg");
+//   background-size:cover;
+// }
 
 // トップに戻るボタン
 #back {
@@ -446,6 +504,10 @@ nav.globalMenuSp.active {
   text-align: center;
 }
 
+.hidden {
+  display: none;
+}
+
 
 // 検索結果
 .search-info-image .image {
@@ -556,7 +618,7 @@ nav.globalMenuSp.active {
 
 .thanks-page {
   height: 800px;
-  background-image: url("thanks.jpg");
+  background-image: image-url("thanks.jpg");
   background-size:cover;
 }
 
@@ -581,6 +643,3 @@ footer {
   font-size: 25px;
 }
 
-.hidden{
-  display:none;
-}

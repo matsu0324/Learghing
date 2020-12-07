@@ -36,21 +36,21 @@
   </div>
 </div>
 <div class="top-block2">
-  <h2 class="about-learghing">WHAT IS "Learghing" ?</h2>
+  <div class="bg"></div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 about-image">
-        <img src="assets/about-visual.jpg" alt="">
-      </div>
-      <div class="col-lg-8 learghing-explanation">
-        <p>「学ぶこと」という意味の"Learning"と「笑うこと」という意味の"Laughing"を合わせた造語が<b>"Learghing(ラーフィング)"</b>です。</p>
-        <p>ユーザーが撮影した画像と英単語を用いて、その画像に沿った面白い英文を考えて投稿する、<b>笑いながら英単語を学べるサイト</b>です。</p>
-        <p>面白ければ面白いほど記憶に残りやすいので、見て笑うだけで単語を覚えられるだけでなく、自分が投稿する過程で英文を作成する為、単語のアウトプットとライティングの練習にも最適です。</p>
+      <div class="col-lg-12 learghing-explanation">
+        <div class="contents-bg">
+          <h2 class="what_learghing">WHAT IS "Learghing" ?</h2>
+          <p>「学ぶこと」という意味の"Learning"<br>「笑うこと」という意味の"Laughing"<br>2つの単語を合わせた造語が<b>"Learghing(ラーフィング)"</b>です。</p>
+          <p>ユーザーが撮影した画像と英単語を用いて<br>その画像に沿った面白い英文を考えて投稿する<br><b>笑いながら英単語を学べるサイト</b>です。</p>
+          <p>面白ければ面白いほど記憶に残りやすいので<br>見て笑うだけで単語を覚えられるだけでなく<br>自分が投稿する過程で英文を作成する為<br>単語のアウトプットとライティングの練習にも最適です。</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="top-block2">
+<div class="top-block3">
   <h2 class="about-learghing"><b>おすすめ投稿</b></h2>
     <!--オススメ投稿一覧・表示-->
   <div class="container">
@@ -78,7 +78,7 @@
            <% end %>
         </div>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-4">
         <div class="view-more"><%= link_to "→全投稿を見る", posts_path %></div>
         <% if !user_signed_in? %>
           <div class="guest-login"><b>投稿の詳細を見る為にはログインが必要です。↓</b></div>
@@ -90,7 +90,7 @@
     </div>
   </div>
 </div>
-<div class="top-block2">
+<div class="top-block5">
   <h2 class="about-learghing"><b>お問い合わせ</b></h2>
   <div class="about-inquiry">
     サービスについて何かご不明な点がございましたら、下記のリンクよりお問い合わせ下さい。
