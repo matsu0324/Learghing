@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   attachment :image
   validates :image, presence: true
-	with_options presence: true do
+  with_options presence: true do
     validates :sentence
     validates :meaning
     validates :explanation
@@ -16,6 +16,6 @@ class Post < ApplicationRecord
   end
 
   def self.search_for(content, method)
-      Post.where("sentence LIKE ? OR meaning LIKE ?", "%"+content+"%", "%"+content+"%")
+    Post.where("sentence LIKE ? OR meaning LIKE ?", "%" + content + "%", "%" + content + "%")
   end
 end

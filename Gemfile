@@ -73,6 +73,7 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'rails-i18n', '~> 5.1'
 gem 'dotenv-rails'
+gem 'rubocop-airbnb'
 group :production do
   gem 'mysql2'
 end

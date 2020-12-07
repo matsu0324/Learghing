@@ -1,6 +1,6 @@
 <div class="search-form">
   <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :content, placeholder:"検索ワードを入力" %>
+    <%= f.text_field :content, placeholder:"検索ワードを入力", size:"20x5" %>
     <%= f.select :model, options_for_select({ "英単語" => "post", "日本語訳" => "post", "ユーザー" => "user",}) %>
     <%= f.button :type => "submit", class: "btn btn-info" do %>
       <i class="fas fa-search"></i>

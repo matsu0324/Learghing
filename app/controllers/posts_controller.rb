@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     else
       @user = current_user
       @posts = Post.all
-      render 'new'
+      render "new"
     end
   end
 
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to post_path(@post), notice: "投稿を更新しました。"
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -49,16 +49,16 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-
   private
+
   def post_params
-    params.require(:post).permit(:sentence, :image, :meaning, :explanation, )
+    params.require(:post).permit(:sentence, :image, :meaning, :explanation,)
   end
 
   def correct_user
     post = Post.find(params[:id])
     if current_user != post.user
-       redirect_to posts_path
+      redirect_to posts_path
     end
   end
 end

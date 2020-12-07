@@ -1,1 +1,2 @@
-$(".body > .container").prepend("<%= j(render 'layouts/errors', obj: @post_comment) %>");
+$("#comments_error").prepend("<%= j(render "layouts/error", obj: @post_comment) %>");
+

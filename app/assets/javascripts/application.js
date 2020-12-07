@@ -20,6 +20,7 @@
 //= require_tree .
 
 document.addEventListener("turbolinks:load", function() {
+  // ハンバーガーメニュー
 $(function() {
     $('.hamburger').click(function() {
         $(this).toggleClass('active');
@@ -30,6 +31,7 @@ $(function() {
             $('.globalMenuSp').removeClass('active');
         }
     });
+    // ハンバーガーメニュー領域外クリック
     $(document).on('click', function(e) {
       if ($('.hamburger').hasClass('active')) {
         if (!$(e.target).closest('.hamburger').length) {
@@ -38,16 +40,18 @@ $(function() {
         }
       }
     })
-});
-})
 
+// コメントエラー文非同期
+    $('#btn-text-error').on('click',function(){
+      $('#error_explanation').remove()
+    })
 
 // トップに戻るボタン
-$(function() {
-  $('#back a').on('click',function(event){
-    $('body, html').animate({
-      scrollTop:0
-    }, 800);
-    event.preventDefault();
-  });
+    $('#back a').on('click',function(event){
+      $('body, html').animate({
+        scrollTop:0
+      }, 800);
+      event.preventDefault();
+    });
 });
+})

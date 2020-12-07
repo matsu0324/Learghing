@@ -2,47 +2,51 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="main-image">
-		    <%= attachment_image_tag @post, :image, :fill, 850, 700, format: "jpeg" %>
+        <%= attachment_image_tag @post, :image, :fill, 850, 700, format: "jpeg" %>
       </div>
       <!--非同期通信-->
       <div id="post_<%= @post.id %>" class="post-info">
-      	<div><b>posted by
-      		<%= link_to user_path(@post.user), data: {"turbolinks" => false} do %>
-				    <%= attachment_image_tag(@post.user, :image, fallback: "no-image.jpg", size:"20x20") %>
-				    <%= @post.user.name %></b>
-				  <% end %>
-      	</div>
+        <div><b>posted by
+          <%= link_to user_path(@post.user), data: {"turbolinks" => false} do %>
+            <%= attachment_image_tag(@post.user, :image, fallback: "no-image.jpg", size:"20x20") %>
+            <%= @post.user.name %></b>
+          <% end %>
+        </div>
         <div class="favorite-btn"><%= render "favorites/favorite-btn", post: @post %></div>
-			  <div class="comments-count">コメント数: <%= @post.post_comments.count %></div>
-			</div>
+        <div class="comments-count">コメント数: <%= @post.post_comments.count %></div>
+      </div>
       <div class="main-sentence"><b><%= @post.sentence %></b></div>
       <table class="table-layout" border="1">
-      	<tr>
-      		<th class="th-layout">日本語訳</th><td class="main-meaning"><b><%= @post.meaning %></b></td>
-      	</tr>
-      	<tr>
-      		<th class="th-layout">解説</th><td class="main-meaning"><b><%= @post.explanation %></b></td>
-      	</tr>
+        <tr>
+          <th class="th-layout">日本語訳</th><td class="main-meaning"><b><%= @post.meaning %></b></td>
+        </tr>
+        <tr>
+          <th class="th-layout">解説</th><td class="main-meaning"><b><%= @post.explanation %></b></td>
+        </tr>
       </table>
       <% if @post.user == current_user %>
         <div class="two-buttons">
-        	<div class="edit-button"><%= link_to "編集する", edit_post_path(@post), class:"btn btn-info btn-block btn-base-1 mt-20" %></div>
-			    <div class="destroy-button"><%= link_to "削除する", post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class:"btn btn-danger btn-block btn-base-1 mt-20" %></div>
+          <div class="edit-button"><%= link_to "編集する", edit_post_path(@post), class:"btn btn-info btn-block btn-base-1 mt-20" %></div>
+          <div class="destroy-button"><%= link_to "削除する", post_path(@post), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class:"btn btn-danger btn-block btn-base-1 mt-20" %></div>
         </div>
-		  <% end %>
-	<!--コメント投稿機能-->
-			<%= form_with(model:[@post, @post_comment], remote: true) do |f| %>
-			  <div class="row">
-			    <div class="col-lg-12">
-			      <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
-			    </div>
-		  	</div>
-		  	<%= f.submit "投稿", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
-			<% end %>
-	<!---->
-			<ol class="post_comments">
-			  <%= render "post_comments/index", post: @post %>
-			</ol>
+      <% end %>
+  <!--コメント投稿機能-->
+      <div id="comments_error">
+        <%= render "layouts/error", obj: @post_comment %>
+      </div>
+
+      <%= form_with(model:[@post, @post_comment], remote: true) do |f| %>
+        <div class="row">
+          <div class="col-lg-12">
+            <%= f.text_area :comment, rows:'5', class: "form-control", id: "form-text-error",placeholder: "コメントをここに" %>
+          </div>
+        </div>
+        <%= f.submit "投稿", class: "btn btn-lg btn-base-1 mt-20 pull-right", id: "btn-text-error" %>
+      <% end %>
+  <!---->
+      <ol class="post_comments">
+        <%= render "post_comments/index", post: @post %>
+      </ol>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          # Omniauthを使用するためのオプション
-         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+         :omniauthable, omniauth_providers: %i(facebook google_oauth2)
 
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
@@ -12,11 +12,11 @@ class User < ApplicationRecord
   has_many :events
 
   attachment :image
-  #validates :name, presence: true, length: {minimum: 2, maximum: 20}
+  # validates :name, presence: true, length: {minimum: 2, maximum: 20}
   validates :name, uniqueness: true
-  validates :profile, length: {maximum: 100}
+  validates :profile, length: { maximum: 100 }
 
-# フォロー機能
+  # フォロー機能
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower
@@ -45,7 +45,7 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
     end
   end
 end

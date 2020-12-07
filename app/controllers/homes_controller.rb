@@ -1,5 +1,4 @@
 class HomesController < ApplicationController
-
   def top
     @user = current_user
     @recommended_posts = Post.find(Favorite.group('post_id').order('count(post_id) desc').limit(3).pluck(:post_id))
