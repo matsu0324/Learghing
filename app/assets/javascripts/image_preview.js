@@ -9,9 +9,9 @@ $(document).on('turbolinks:load', function () {
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result;
-        var html= `<div class="post-image">
+        var html = `<div class="post-image">
                      <div class="post-image-content">
-                        <img src=${src} width="250" height="200" >
+                        <img src=${src} width="250" height="200">
                      </div>
                      <div class="post-image-operetion">
                        <div class="post-image-operetion-delete btn btn-danger">削除</div>
