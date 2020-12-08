@@ -9,12 +9,12 @@ $(document).on('turbolinks:load', function () {
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result;
-        var html= `<div class='post-image'>
-                     <div class=' post-image-content'>
+        var html= `<div class="post-image">
+                     <div class="post-image-content">
                         <img src=${src} width="250" height="200" >
                      </div>
-                     <div class='post-image-operetion'>
-                       <div class='post-image-operetion-delete btn btn-danger'>削除</div>
+                     <div class="post-image-operetion">
+                       <div class="post-image-operetion-delete btn btn-danger">削除</div>
                      </div>
                    </div>`;
         //img-file要素の前にhtmlを差し込む
