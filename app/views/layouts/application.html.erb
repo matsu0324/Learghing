@@ -16,14 +16,13 @@
     <header>
       <a href="/"><img src="<%= asset_path "main-logo.png" %>", class="main-logo", width="190" height="100", alt="ロゴ" ></a>
       <%= render "layouts/header" %>
-    </header>
-    <div class="search-body">
-      <div class="container">
+      <div class="search-body">
         <% if user_signed_in? %>
           <%= render "layouts/search" %>
         <% end %>
-      </div>
     </div>
+    </header>
+
     <%= yield %>
     <span id="back">
       <a>
