@@ -1,9 +1,13 @@
 class HomesController < ApplicationController
   def top
     @user = current_user
-    @recommended_posts = Post.find(Favorite.group('post_id').order('count(post_id) desc').limit(3).pluck(:post_id))
+    # いいねが多い順に上位３投稿を表示
+    @recommended_posts = Post.find(
+      Favorite.group('post_id').order('count(post_id) desc').limit(3).pluck(:post_id)
+    )
   end
 
+  # ゲストログインの定義
   def new_guest
     user = User.find_or_create_by!(email: "guest@example.com") do |user|
       user.name = "GUEST"
