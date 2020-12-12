@@ -8,6 +8,7 @@
     <ul>
       <% if user_signed_in? %>
         <li><%= link_to "マイページ", user_path(current_user), class: "glyphicon glyphicon-home home" %></li>
+        <li><%= link_to "アウトプット（投稿する）", new_post_path(@post), class: "glyphicon glyphicon-pencil" %></li>
         <li><%= link_to "笑って学ぶ", posts_path, class: "glyphicon glyphicon-eye-open" %></li>
         <li><%= link_to "ユーザーを探す", users_path, class: "glyphicon glyphicon-user users" %></li>
         <li><%= link_to "お問い合わせ", inquiry_path, class: "glyphicon glyphicon-envelope" %></li>
