@@ -15,6 +15,7 @@ class User < ApplicationRecord
   # validates :name, presence: true, length: {minimum: 2, maximum: 20}
   validates :name, uniqueness: true
   validates :profile, length: { maximum: 100 }
+  validates :email, presence: true
 
   # フォロー機能
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy

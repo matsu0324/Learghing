@@ -73,13 +73,22 @@ body {
 }
 
 // フラッシュ・エラーメッセージ
-#notice {
-  font-size: 20px;
-  margin-left: 0;
-  // background-color: #7CFC00;
+.notifications {
+  color: white;
+  text-align: center;
 }
+
+#notice {
+  background-color: #00ff7f;
+}
+
 #error_explanation {
-  color: #FF0000;
+  color: white;
+  text-align: center;
+}
+
+.alert {
+  background-color: #ff6347;
 }
 
 

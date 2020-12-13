@@ -1,9 +1,9 @@
 <% if post.errors.any? %>
   <div id="error_explanation">
-    <h3><%= pluralize(post.errors.count, "個のエラーが発生しました。") %> </h3>
+    <h3 class="alert"><%= pluralize(post.errors.count, "個のエラーが発生しました。") %> </h3>
     <ul>
       <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="alert"><%= message %></li>
       <% end %>
     </ul>
   </div>
